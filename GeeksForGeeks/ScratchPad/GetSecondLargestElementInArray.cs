@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScratchPad.lib;
+using System;
 
 namespace ScratchPad;
 
@@ -9,12 +10,14 @@ public static class GetSecondLargestElementInArray
     {
         var result = Execute(i);
 
+        Console.WriteLine(Environment.NewLine);
         Console.WriteLine($"Running {nameof(GetSecondLargestElementInArray)}");
         Console.WriteLine(result);
     }
 
     public static void RunMultiple(List<InformativeList<int>> items)
     {
+        Console.WriteLine(Environment.NewLine);
         Console.WriteLine($"===============Running {nameof(GetSecondLargestElementInArray)} for {items.Count()} items");
 
         foreach (var item in items)

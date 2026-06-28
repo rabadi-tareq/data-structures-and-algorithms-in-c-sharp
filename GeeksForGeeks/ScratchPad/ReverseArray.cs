@@ -1,20 +1,23 @@
-﻿using System;
+﻿using ScratchPad.lib;
+using System;
 
 namespace ScratchPad;
 
 public static class ReverseArray
 {
 
-    public static void RunSingle(InputType i)
+    public static void RunSingle(InformativeList<int> i)
     {
         var result = Execute(i);
 
+        Console.WriteLine(Environment.NewLine);
         Console.WriteLine($"Running {nameof(ReverseArray)}");
         Console.WriteLine(result);
     }
 
-    public static void RunMultiple(List<InputType> items)
+    public static void RunMultiple(List<InformativeList<int>> items)
     {
+        Console.WriteLine(Environment.NewLine);
         Console.WriteLine($"===============Running {nameof(ReverseArray)} for {items.Count()} items");
 
         foreach (var item in items)
@@ -28,9 +31,16 @@ public static class ReverseArray
 
     }
 
-    private static ReturnType Execute(InputType i)
+    private static InformativeList<int> Execute(InformativeList<int> items)
     {
-        throw new NotImplementedException();
-        
+        // 1, 4, 3, 2, 6, 5
+        for (int i = 0; i < items.Count / 2; i++)
+        {
+            var temp = items[i];
+            items[i] = items[items.Count - 1 - i];
+            items[items.Count - 1 - i] = temp;
+        }
+
+        return items;
     }
 }

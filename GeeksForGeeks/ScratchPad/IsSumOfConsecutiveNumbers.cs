@@ -8,15 +8,18 @@ public static class IsSumOfConsecutiveNumbers
 
     public static void RunSingle(int i)
     {
+        Console.WriteLine(Environment.NewLine);
+        Console.WriteLine($"Running  {nameof(IsSumOfConsecutiveNumbers)}");
+
         var result = Execute(i);
 
-        Console.WriteLine($"Running {nameof(IsSumOfConsecutiveNumbers)}");
         Console.WriteLine(result);
     }
 
     public static void RunMultiple(int[] items)
     {
-        Console.WriteLine($"===============Running {nameof(IsSumOfConsecutiveNumbers)} for {items.Count()} items");
+        Console.WriteLine(Environment.NewLine);
+        Console.WriteLine($"===============Running tareq {nameof(IsSumOfConsecutiveNumbers)} for {items.Count()} items");
 
         foreach (var item in items)
         {
